@@ -1,16 +1,13 @@
 # Guide
+Dataset for user study in the paper [Fair Contextual Multi-Armed Bandits: Theory and Experiments](https://arxiv.org/pdf/1912.08055.pdf)
 
 ## Contents
-1. user study: User study conducted on AMTurk
+### Figures 
+Figures plotted by running data_analysis.py
 
-## Files
-### User Study 
+### Objective data
+Each .csv file in "objective data/" corresponds to a pair of users.
 
-Note: The necessary files are "objective_data/", "subjective_data/", and data_analysis.py
-
-Figures: Figures plotted by running data_analysis.py
-
-Objective data:
   - SET-A_CONTEXT = True, then for first set of 44 questions the agent picked player using FairCB and next set of 44 questions the agent picked player using non-contextual fair FTRL.
   - SET-B_CONTEXT = True, then for first set of 44 questions the agent picked player using non-contextual fair FTRL and next set of 44 questions the agent picked player using FairCB.
   - Set: Set number in ./questions.json
@@ -21,14 +18,15 @@ Objective data:
   - sch_prob-c2p1: Probability of selecting player 1 in context 2 rounded off to the tenth place for the next 10 turns to be divided amongst the players.
   - Turns: question assignment for the next 10 questions. 0 - player 1 (USA) and 1 - player 2 (India)
 
-Subjective data:
+### Subjective data
   - Ratings are on 1-7 Likert Scale
   - For half the trials FairCB was run in Part 1 (SET A) of the study and for the other half FairCB was run in Part 2 (SET A) for counter-balancing.
 
-data_analysis.py: 
+### data_analysis.py 
   - This file loads the objective and subjective data --> removes users that did not complete the quiz or did not answer any survey responses --> calculates and plots performance and fairness rating.
 
-questions.json:
+### questions.json
+
    ```
     question_img: link for the image
     question_no: question number from for that set
